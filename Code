@@ -1,0 +1,13 @@
+import speech_recognition as sr
+
+with sr.Microphone() as source:
+    print("konusun")
+    r.adjust_for_ambient_noise(source)
+    audio = r.listen(source)
+    
+    try:
+        text = r.recognize_google(audio, language="tr-TR")
+        print("{} dediniz".format(text))
+        
+    except:
+        print("uzgunum daha net bir sekilde soyler misiniz")
